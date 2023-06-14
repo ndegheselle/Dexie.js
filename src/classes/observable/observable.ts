@@ -11,6 +11,7 @@ const symbolObservable: typeof Symbol.observable =
 
 export class Observable<T> implements IObservable<T> {
   private _subscribe: (observer: Observer<T>) => Subscription;
+  doQuery?: ()=>void;
   hasValue?: ()=>boolean;
   getValue?: ()=>T;
 

@@ -149,6 +149,7 @@ export function liveQuery<T>(querier: () => T | Promise<T>): IObservable<T> {
     };
 
     doQuery();
+    observable.doQuery = doQuery;
     return subscription;
   });
   observable.hasValue = () => hasValue;
